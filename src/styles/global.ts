@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { darkTheme } from "./themes/dark";
 
 export const GlobalStyle = createGlobalStyle`
     * {
@@ -9,8 +8,9 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background: ${darkTheme.gray600};
-        color: ${darkTheme.gray100};
+        background: ${props => props.theme['gray600']};
+        color: ${props => props.theme['gray100']};
+        -webkit-font-smoothing: antialiased;
     }
 
     body, input, textarea, button {
