@@ -1,6 +1,6 @@
+import { Trash, PlusCircle } from "@phosphor-icons/react";
 import logo2do from '../../assets/logo.svg'
-
-import { Button, Checkbox, FormContainer, Header, Task, TaskContainer, TaskCounter, TaskHeader, TaskInput, TaskList } from "./styles";
+import { Button, Checkbox, FormContainer, Header, Task, TaskContainer, TaskCounter, TaskHeader, TaskInput, TaskList, TrashButton } from "./styles";
 
 export function Home() {
     return (
@@ -11,7 +11,10 @@ export function Home() {
                 <FormContainer>
                     <form onSubmit={() => {}} action="">
                         <TaskInput placeholder='Adicione uma nova tarefa' type="text" />
-                        <Button>Criar</Button>
+                        <Button>
+                            Criar
+                            <PlusCircle size={22} />
+                        </Button>
                     </form>
                 </FormContainer>
             </Header>
@@ -34,7 +37,11 @@ export function Home() {
                         </label>
 
                         <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-                        <button>eeee</button>
+                        <label>
+                            <TrashButton>
+                                <Trash weight="bold" />
+                            </TrashButton>
+                        </label>
                     </Task>
                 </TaskList>
             </TaskContainer>
