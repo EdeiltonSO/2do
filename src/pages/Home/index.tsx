@@ -1,6 +1,6 @@
 import logo2do from '../../assets/logo.svg'
 
-import { Button, FormContainer, Header, Task, TaskContainer, TaskCounter, TaskHeader, TaskInput, TaskList } from "./styles";
+import { Button, Checkbox, FormContainer, Header, Task, TaskContainer, TaskCounter, TaskHeader, TaskInput, TaskList } from "./styles";
 
 export function Home() {
     return (
@@ -15,6 +15,29 @@ export function Home() {
                     </form>
                 </FormContainer>
             </Header>
+
+            <TaskContainer>
+                <TaskHeader>
+                    <TaskCounter>
+                        <p id='created'>Tarefas criadas</p>
+                        <span>5</span>
+                    </TaskCounter>
+                    <TaskCounter>
+                        <p id='done'>Concluídas</p>
+                        <span>2 de 5</span>
+                    </TaskCounter>
+                </TaskHeader>
+                <TaskList>
+                    <Task>
+                        <label>
+                            <input type='checkbox' />
+                        </label>
+
+                        <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
+                        <button>eeee</button>
+                    </Task>
+                </TaskList>
+            </TaskContainer>
         </>
     );
 }

@@ -19,7 +19,6 @@ export const Header = styled.header`
 export const FormContainer = styled.div`
     width: 46rem;
     height: 3.375rem;
-    // border: 1px solid #f00;
     margin-top: 3.3125rem;
     
     form {
@@ -51,5 +50,85 @@ export const Button = styled.button`
     color: ${props => props.theme.gray100};
     border-radius: 8px;
     font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: ${props => props.theme.blue};
+    }
 `;
 
+export const TaskContainer = styled.div`
+    width: 100%;
+    height: fit-content;
+    //background-color: #234;
+    margin-bottom: 5rem;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+`;
+
+export const TaskHeader = styled.div`
+    width: 46rem;
+    height: fit-content;
+    margin-top: 4rem;
+    
+    display: flex;
+    justify-content: space-between;
+`;
+
+export const TaskCounter = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    p {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    p#created { color: ${props => props.theme.blue} }
+    p#done { color: ${props => props.theme.purple} }
+
+    span {
+        padding: 0 0.625rem;
+        font-size: 12px;
+        font-weight: bold;
+        color: ${props => props.theme.gray200};
+        background-color: ${props => props.theme.gray400};
+        border-radius: 1rem;
+    }
+`;
+
+export const TaskList = styled.ul`
+    width: 46rem;
+    height: fit-content;
+    margin-top: 1.5rem;
+`;
+
+export const Task = styled.li`
+    width: 100%;
+    height: fit-content;
+    list-style: none;
+    padding: 1rem;
+    font-size: 0.875rem;
+    background-color: ${props => props.theme.gray500};
+    border: 1px solid ${props => props.theme.gray400};
+    border-radius: 8px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.95rem;
+
+    &:not(:first-child) {
+        margin-top: 0.75rem;
+    }
+
+    p {
+        width: 100%;
+        line-height: 1.4rem;
+    }
+`;
