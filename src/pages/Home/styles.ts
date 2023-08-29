@@ -145,9 +145,18 @@ export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
     border: 2px solid ${props => props.theme.blue};
     transition: 0.2s;
 
+    &:hover {
+        border: 2px solid ${props => props.theme.blueDark};
+    }
+
     &:checked {
         background-color: ${props => props.theme.purpleDark};
         border: 2px solid ${props => props.theme.purpleDark};
+
+        &:hover {
+            background-color: ${props => props.theme.purple};
+            border: 2px solid ${props => props.theme.purple};
+        }
 
         &::after {
             content: '';
