@@ -43,6 +43,7 @@ export const TaskInput = styled.input`
 `;
 
 export const Button = styled.button`
+    display: flex;
     height: 3.375rem;
     border: none;
     padding: 1rem;
@@ -51,7 +52,10 @@ export const Button = styled.button`
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.1s;
+    font-size: 14px;
+    align-items: center;
+    gap: 8px;
 
     &:hover {
         background-color: ${props => props.theme.blue};
@@ -112,9 +116,10 @@ export const Task = styled.li`
     width: 100%;
     height: fit-content;
     list-style: none;
-    padding: 1rem;
+    padding: 1.2rem 1rem 1rem 1rem;
     font-size: 0.875rem;
     background-color: ${props => props.theme.gray500};
+    // alterar borda quando a task estiver concluída
     border: 1px solid ${props => props.theme.gray400};
     border-radius: 8px;
 
@@ -129,21 +134,23 @@ export const Task = styled.li`
 
     p {
         width: 100%;
-        line-height: 1.4rem;
+        // alterar color e riscar quando a task estiver concluída
+        color: ${props => props.theme.gray100};
+        // text-decoration: line-through;
     }
 `;
 
 export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
     appearance: none;
     position: relative;
-    width: 16px;
-    height: 16px;
+    width: 1rem;
+    height: 1rem;
 
     margin-top: 0.2rem;
     border-radius: 50%;
     background-color: transparent;
     border: 2px solid ${props => props.theme.blue};
-    transition: 0.2s;
+    transition: 0.1s;
 
     &:hover {
         border: 2px solid ${props => props.theme.blueDark};
@@ -160,7 +167,6 @@ export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
 
         &::after {
             content: '';
-            font-size: 12px;
             
             position: absolute; 
             top: 45%;
@@ -172,5 +178,26 @@ export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
             border: solid ${props => props.theme.gray100};
             border-width: 0 2px 2px 0;
         }
+    }
+`;
+
+export const TrashButton = styled.button`
+    width: 1.3rem;
+    height: 1.3rem;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 4px;
+    padding-top: 0.3rem;
+    background-color: transparent;
+    color: ${props => props.theme.gray300};
+    cursor: pointer;
+    transition: 0.1s;
+
+    &:hover {
+        background-color: ${props => props.theme.gray400};
+        color: ${props => props.theme.danger};
     }
 `;
