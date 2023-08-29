@@ -30,7 +30,7 @@ export function Home() {
                 <TaskList>
                     <Task>
                         <label>
-                            <input type='checkbox' />
+                            <Checkbox />
                         </label>
 
                         <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
