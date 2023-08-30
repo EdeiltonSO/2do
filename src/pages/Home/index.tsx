@@ -1,22 +1,14 @@
-import { Trash, PlusCircle } from "@phosphor-icons/react";
 import logo2do from '../../assets/logo.svg'
-import { Button, Checkbox, FormContainer, Header, Task, TaskContainer, TaskCounter, TaskHeader, TaskInput, TaskList, TrashButton } from "./styles";
+import { Header, TaskContainer, TaskCounter, TaskHeader, TaskList } from "./styles";
+import { Task } from "../../components/Task";
+import { NewTaskForm } from '../../components/NewTaskForm';
 
 export function Home() {
     return (
         <>
             <Header>
                 <img src={logo2do} alt="" />
-
-                <FormContainer>
-                    <form onSubmit={() => {}} action="">
-                        <TaskInput placeholder='Adicione uma nova tarefa' type="text" />
-                        <Button>
-                            Criar
-                            <PlusCircle size={22} />
-                        </Button>
-                    </form>
-                </FormContainer>
+                <NewTaskForm onSubmit={() => {console.log('submit')}} /> 
             </Header>
 
             <TaskContainer>
@@ -31,18 +23,18 @@ export function Home() {
                     </TaskCounter>
                 </TaskHeader>
                 <TaskList>
-                    <Task>
-                        <label>
-                            <Checkbox />
-                        </label>
-
-                        <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-                        <label>
-                            <TrashButton>
-                                <Trash weight="bold" />
-                            </TrashButton>
-                        </label>
-                    </Task>
+                    <Task
+                        done={false}
+                        title="Tarefa 2"
+                        onChangeCheckbox={() => {console.log('check 2')}}
+                        onClickTrash={() => {console.log('lixo 2')}}
+                    />
+                    <Task
+                        done={true}
+                        title="Tarefa 1"
+                        onChangeCheckbox={() => {console.log('check 1')}}
+                        onClickTrash={() => {console.log('lixo 1')}}
+                    />
                 </TaskList>
             </TaskContainer>
         </>
