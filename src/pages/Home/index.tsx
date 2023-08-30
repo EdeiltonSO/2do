@@ -1,23 +1,14 @@
-import { PlusCircle } from "@phosphor-icons/react";
 import logo2do from '../../assets/logo.svg'
-import { Button, FormContainer, Header, TaskContainer, TaskCounter, TaskHeader, TaskInput, TaskList } from "./styles";
+import { Header, TaskContainer, TaskCounter, TaskHeader, TaskList } from "./styles";
 import { Task } from "../../components/Task";
+import { NewTaskForm } from '../../components/NewTaskForm';
 
 export function Home() {
     return (
         <>
             <Header>
                 <img src={logo2do} alt="" />
-
-                <FormContainer>
-                    <form onSubmit={() => {}} action="">
-                        <TaskInput placeholder='Adicione uma nova tarefa' type="text" />
-                        <Button>
-                            Criar
-                            <PlusCircle size={22} />
-                        </Button>
-                    </form>
-                </FormContainer>
+                <NewTaskForm onSubmit={() => {console.log('submit')}} /> 
             </Header>
 
             <TaskContainer>
