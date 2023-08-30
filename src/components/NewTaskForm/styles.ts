@@ -22,8 +22,8 @@ export const TaskInput = styled.input`
     color: ${props => props.theme.gray100};
 
     &::placeholder {
-    color: ${props => props.theme.gray300};
-  }
+        color: ${props => props.theme.gray300};
+    }
 `;
 
 export const Button = styled.button`
