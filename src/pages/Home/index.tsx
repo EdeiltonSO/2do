@@ -34,9 +34,15 @@ export function Home() {
                 <TaskList>
                     <Task
                         done={false}
+                        title="Tarefa 2"
+                        onChangeCheckbox={() => {console.log('check 2')}}
+                        onClickTrash={() => {console.log('lixo 2')}}
+                    />
+                    <Task
+                        done={true}
                         title="Tarefa 1"
-                        onChangeCheckbox={() => {console.log('check')}}
-                        onClickTrash={() => {console.log('lixo')}}
+                        onChangeCheckbox={() => {console.log('check 1')}}
+                        onClickTrash={() => {console.log('lixo 1')}}
                     />
                 </TaskList>
             </TaskContainer>
