@@ -1,8 +1,7 @@
 import { PlusCircle } from "@phosphor-icons/react";
 import logo2do from '../../assets/logo.svg'
-import { Button, FormContainer, Header, Task, TaskContainer, TaskCounter, TaskHeader, TaskInput, TaskList } from "./styles";
-import { Checkbox } from "../../components/Checkbox";
-import { TrashButton } from "../../components/TrashButton";
+import { Button, FormContainer, Header, TaskContainer, TaskCounter, TaskHeader, TaskInput, TaskList } from "./styles";
+import { Task } from "../../components/Task";
 
 export function Home() {
     return (
@@ -33,11 +32,12 @@ export function Home() {
                     </TaskCounter>
                 </TaskHeader>
                 <TaskList>
-                    <Task>
-                        <Checkbox onChange={() => {console.log('checkbox')}} />
-                        <p>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</p>
-                        <TrashButton onClick={() => {console.log('lixeira')}} />
-                    </Task>
+                    <Task
+                        done={false}
+                        title="Tarefa 1"
+                        onChangeCheckbox={() => {console.log('check')}}
+                        onClickTrash={() => {console.log('lixo')}}
+                    />
                 </TaskList>
             </TaskContainer>
         </>

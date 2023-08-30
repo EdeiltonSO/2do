@@ -111,31 +111,3 @@ export const TaskList = styled.ul`
     height: fit-content;
     margin-top: 1.5rem;
 `;
-
-export const Task = styled.li`
-    width: 100%;
-    height: fit-content;
-    list-style: none;
-    padding: 1.2rem 1rem 1rem 1rem;
-    font-size: 0.875rem;
-    background-color: ${props => props.theme.gray500};
-    // alterar borda quando a task estiver concluída
-    border: 1px solid ${props => props.theme.gray400};
-    border-radius: 8px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 0.95rem;
-
-    &:not(:first-child) {
-        margin-top: 0.75rem;
-    }
-
-    p {
-        width: 100%;
-        // alterar color e riscar quando a task estiver concluída
-        color: ${props => props.theme.gray100};
-        // text-decoration: line-through;
-    }
-`;
