@@ -40,8 +40,13 @@ export const Button = styled.button`
     font-size: 14px;
     align-items: center;
     gap: 8px;
+    user-select: none;
 
-    &:hover {
+    &:hover:not(:disabled) {
         background-color: ${props => props.theme.blue};
+    }
+
+    &:disabled {
+        cursor: not-allowed;
     }
 `;

@@ -14,6 +14,10 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
 
+    img {
+        user-select: none;
+    }
+
     strong {
         margin-top: 1rem;
     }

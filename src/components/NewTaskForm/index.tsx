@@ -28,7 +28,7 @@ export function NewTaskForm({ onSubmitFunction /*, ...props*/ }: NewTaskFormProp
                     onChange={handleNewTaskTitleChange}
                     type="text"
                 />
-                <Button type="submit">
+                <Button type="submit" disabled={!inputText}>
                     Criar
                     <PlusCircle size={22} />
                 </Button>
