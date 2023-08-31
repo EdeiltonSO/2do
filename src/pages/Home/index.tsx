@@ -3,6 +3,7 @@ import { Header, TaskContainer, TaskCounter, TaskHeader, TaskList } from "./styl
 import { Task } from "../../components/Task";
 import { NewTaskForm } from '../../components/NewTaskForm';
 import { useState } from 'react';
+import { EmptyState } from '../../components/EmptyState';
 
 interface Task {
     id: string,
@@ -61,7 +62,7 @@ export function Home() {
     return (
         <>
             <Header>
-                <img src={logo2do} alt="" />
+                <img src={logo2do} />
                 <NewTaskForm onSubmitFunction={handleCreateNewTask} /> 
             </Header>
 
@@ -77,6 +78,7 @@ export function Home() {
                     </TaskCounter>
                 </TaskHeader>
                 <TaskList>
+                {tasks.length === 0 ? (<EmptyState />) : (<></>)}
                     {tasks.map(task => {
                         if (!task.done) {
                             return (
