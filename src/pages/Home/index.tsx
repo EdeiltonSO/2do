@@ -12,6 +12,7 @@ interface Task {
 
 export function Home() {
     const [tasks, setTasks] = useState<Task[]>([]);
+    const [numberOfTasksDone, setNumberOfTasksDone] = useState(0);
 
     function handleCreateNewTask(title: string) {
         if (!title) return;
@@ -25,18 +26,22 @@ export function Home() {
             done: false,
         }
         
-        setTasks([...tasks, task]);
+        setTasks([task, ...tasks]);
     }
 
     function handleMarkTaskAsDone(id: string) {
         const tasksUpdated = tasks.map(task => {
-            if (task.id === id) {
-                task.done = task.done ? false : true;
-            }
+            if (task.id === id)
+                task.done = !task.done;
+            
             return task;
         });
 
         setTasks(tasksUpdated);
+
+        setNumberOfTasksDone(
+            tasksUpdated.filter(task => task.done).length
+        );
     }
 
     function handleDeleteTask(id: string) {
@@ -64,19 +69,36 @@ export function Home() {
                     </TaskCounter>
                     <TaskCounter>
                         <p id='done'>Concluídas</p>
-                        <span>X de {tasks.length}</span>
+                        <span>{numberOfTasksDone} de {tasks.length}</span>
                     </TaskCounter>
                 </TaskHeader>
                 <TaskList>
-                    {tasks.map(task => (
-                        <Task
-                            key={task.id}
-                            done={task.done}
-                            title={task.title}
-                            onChangeCheckbox={() => {handleMarkTaskAsDone(task.id)}}
-                            onClickTrash={() => {handleDeleteTask(task.id)}}
-                        />
-                    ))}
+                    {tasks.map(task => {
+                        if (!task.done) {
+                            return (
+                                <Task
+                                    key={task.id}
+                                    done={task.done}
+                                    title={task.title}
+                                    onChangeCheckbox={() => {handleMarkTaskAsDone(task.id)}}
+                                    onClickTrash={() => {handleDeleteTask(task.id)}}
+                                />
+                            )
+                        }
+                    })}
+                    {tasks.map(task => {
+                        if (task.done) {
+                            return (
+                                <Task
+                                    key={task.id}
+                                    done={task.done}
+                                    title={task.title}
+                                    onChangeCheckbox={() => {handleMarkTaskAsDone(task.id)}}
+                                    onClickTrash={() => {handleDeleteTask(task.id)}}
+                                />
+                            )
+                        }
+                    })}
                 </TaskList>
             </TaskContainer>
         </>
