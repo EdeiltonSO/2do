@@ -28,6 +28,27 @@ export function Home() {
         setTasks([...tasks, task]);
     }
 
+    function handleMarkTaskAsDone(id: string) {
+        const tasksUpdated = tasks.map(task => {
+            if (task.id === id) {
+                task.done = task.done ? false : true;
+            }
+            return task;
+        });
+
+        setTasks(tasksUpdated);
+    }
+
+    function handleDeleteTask(id: string) {
+        const tasksUpdated = tasks.filter(task => {
+            if (task.id !== id) {
+                return task;
+            }
+        });
+
+        setTasks(tasksUpdated);
+    }
+
     return (
         <>
             <Header>
@@ -52,8 +73,8 @@ export function Home() {
                             key={task.id}
                             done={task.done}
                             title={task.title}
-                            onChangeCheckbox={() => {console.log('check 2')}}
-                            onClickTrash={() => {console.log('lixo 2')}}
+                            onChangeCheckbox={() => {handleMarkTaskAsDone(task.id)}}
+                            onClickTrash={() => {handleDeleteTask(task.id)}}
                         />
                     ))}
                 </TaskList>
