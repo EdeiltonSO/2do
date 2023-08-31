@@ -4,7 +4,11 @@
 
 ![Página inicial do 2do](2do.jpg)
 
-2do é uma aplicação para listagem de tarefas que conta com um formulário para adicionar o título de uma tarefa e adicioná-la à lista. Após adicionadas, as tarefas ficam pendentes para serem marcadas como concluídas (por meio da checkbox à esquerda) ou excluídas (por meio da lixeira à direita). Tarefas podem ser excluídas estando concluídas ou não.
+2do é uma aplicação para listagem de tarefas que conta com um campo para informar o título de uma tarefa e adicioná-la à lista. 
+
+Após adicionadas, as tarefas ficam pendentes para serem marcadas como concluídas (por meio da checkbox à esquerda) ou excluídas (por meio da lixeira à direita). 
+
+Tarefas podem ser excluídas estando concluídas ou não.
 
 ## Quero testar, como faço?
 
