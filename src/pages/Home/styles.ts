@@ -10,7 +10,7 @@ export const Header = styled.header`
     margin-bottom: 1.6875rem;
 
     img {
-        width: 7.875rem;
+        width: fit-content;
         height: 3rem;
         margin-top: 4.5rem;
     }
