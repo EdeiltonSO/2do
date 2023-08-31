@@ -1,4 +1,4 @@
-import logo2do from '../../assets/logo.svg'
+import logo2do from '../../assets/2do_logo.svg'
 import { Header, TaskContainer, TaskCounter, TaskHeader, TaskList } from "./styles";
 import { Task } from "../../components/Task";
 import { NewTaskForm } from '../../components/NewTaskForm';
@@ -33,7 +33,7 @@ export function Home() {
         const tasksUpdated = tasks.map(task => {
             if (task.id === id)
                 task.done = !task.done;
-            
+
             return task;
         });
 
@@ -52,6 +52,10 @@ export function Home() {
         });
 
         setTasks(tasksUpdated);
+
+        setNumberOfTasksDone(
+            tasksUpdated.filter(task => task.done).length
+        );
     }
 
     return (
