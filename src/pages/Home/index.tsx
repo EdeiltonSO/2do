@@ -57,6 +57,15 @@ export function Home() {
     setNumberOfTasksDone(tasksUpdated.filter((task) => task.done).length)
   }
 
+  useEffect(() => {
+    const tasksNotDone = tasks.length - numberOfTasksDone
+
+    if (tasksNotDone === 1) document.title = '1 tarefa pendente'
+    else if (tasksNotDone > 1)
+      document.title = `${tasksNotDone} tarefas pendentes`
+    else document.title = 'Sem tarefas pendentes'
+  }, [tasks, numberOfTasksDone])
+
   return (
     <>
       <Header>
