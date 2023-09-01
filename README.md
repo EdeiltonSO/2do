@@ -2,7 +2,7 @@
 
 ## O que é isso?
 
-![Página inicial do 2do](2do.jpg)
+![Página inicial do 2do](to-do.jpg)
 
 2do é uma aplicação para listagem de tarefas que conta com um campo para informar o título de uma tarefa e adicioná-la à lista. 
 
@@ -12,6 +12,7 @@ Tarefas podem ser excluídas estando concluídas ou não.
 
 ## Quero testar, como faço?
 
+0. Tenha o [Node](https://nodejs.org/en) instalado;
 1. Faça o download/clone;
 2. Acesse a pasta do projeto;
 3. Execute o comando `npm i`;
